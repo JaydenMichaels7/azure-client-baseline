@@ -8,3 +8,4 @@ bootstrap/terraform.tfvars
 
 .venv/
 __pycache__/
+.venv*/
