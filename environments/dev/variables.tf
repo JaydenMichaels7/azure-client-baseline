@@ -1,4 +1,4 @@
-variable "healthcare_monarch" {
+variable "client_name" {
   description = "Short client identifier (lowercase, <=8 chars). One client = one environment folder."
   type        = string
   default     = "acme"

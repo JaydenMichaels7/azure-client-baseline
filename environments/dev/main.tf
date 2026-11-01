@@ -18,10 +18,10 @@ provider "azurerm" {
 }
 
 locals {
-  name_prefix = "${var.healthcare_monarch}-${var.environment}"
+  name_prefix = "${var.client_name}-${var.environment}"
 
   tags = {
-    client      = var.healthcare_monarch
+    client      = var.client_name
     environment = var.environment
     project     = "msp-landing-zone"
     managed_by  = "terraform"
