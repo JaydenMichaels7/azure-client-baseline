@@ -191,3 +191,12 @@ Two Python scripts in `scripts/`, each with unit tests (`python -m unittest disc
   onboarding checklist. It changes nothing in Azure and does not edit the pipeline.
 
 Latest audit of `rg-acme-dev`: 8 passed, 0 failed, 1 skipped.
+
+## Full Architecture
+
+This project is split into two distinct operational workflows:
+
+1.  **Client Scaffolding & Auditing (Python):** A local CLI that uses the Azure SDK to generate new client environments and audit existing ones for security drift (e.g., open NSGs, missing tags, expiring secrets).
+2.  **Infrastructure Provisioning (Terraform & CI/CD):** A passwordless GitHub Actions pipeline that provisions the network, compute, and security resources via OIDC federation.
+
+![Architecture Diagram](docs/images/full-architecture.png)
