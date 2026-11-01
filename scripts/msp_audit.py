@@ -148,7 +148,10 @@ def resolve_subscription(arg):
 
 
 def fetch_resources(credential, subscription_id, resource_group):
-    from azure.mgmt.resource import ResourceManagementClient
+    try:  # azure-mgmt-resource 24+ moved the client into a sub-package
+        from azure.mgmt.resource.resources import ResourceManagementClient
+    except ImportError:
+        from azure.mgmt.resource import ResourceManagementClient
 
     client = ResourceManagementClient(credential, subscription_id)
     group = client.resource_groups.get(resource_group)

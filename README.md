@@ -178,3 +178,16 @@ Ubuntu VM is shown as optional because it is disabled (`enable_compute = false`)
 Azure returned capacity errors in every uksouth availability zone. The pipeline also
 runs TFLint, Checkov and Trivy and posts a plan on pull requests, which this diagram
 does not show.*
+
+## Automation scripts
+
+Two Python scripts in `scripts/`, each with unit tests (`python -m unittest discover tests`).
+
+- **`msp_audit.py`** reads a client resource group and checks for drift the pipeline cannot
+  see: missing tags, NSG rules open to the internet, and Key Vault secrets without an expiry
+  date. It exits with code 1 on any failure. Listing secrets needs a Key Vault role, so
+  without one that check is reported as skipped.
+- **`new_client.py`** creates a new client folder from `environments/dev` and writes an
+  onboarding checklist. It changes nothing in Azure and does not edit the pipeline.
+
+Latest audit of `rg-acme-dev`: 8 passed, 0 failed, 1 skipped.
