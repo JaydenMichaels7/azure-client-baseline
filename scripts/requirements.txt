@@ -1,0 +1,7 @@
+# Only msp_audit.py needs these. new_client.py uses the standard library.
+# After installing, pin exact versions with `pip freeze` before relying on them.
+azure-identity>=1.15
+azure-mgmt-resource>=23.0
+azure-mgmt-network>=25.0
+azure-keyvault-secrets>=4.8
+azure-core>=1.30
