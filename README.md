@@ -1,4 +1,4 @@
-# Azure MSP Client Landing Zone
+# Azure Secure Client Environment Baseline
 
 A secure, isolated network + compute environment for a managed client, built entirely
 with Terraform and deployed by GitHub Actions. One client = one environment folder.
