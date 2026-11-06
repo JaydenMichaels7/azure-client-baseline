@@ -1,4 +1,4 @@
-# Azure MSP Client Landing Zone
+# Azure Secure Client Environment Baseline
 
 A secure, isolated network + compute environment for a managed client, built entirely
 with Terraform and deployed by GitHub Actions. One client = one environment folder.
@@ -25,7 +25,7 @@ This design uses them for segmentation; production would add Azure Firewall / pr
 **Prereqs:** Azure free account, Azure CLI, Terraform >= 1.6, GitHub account, an SSH key pair
 (`ssh-keygen -t ed25519 -f ~/.ssh/msp_lab`).
 
-1. **Create the GitHub repo** `azure-msp-landing-zone` and push this code to it *after* step 3.
+1. **Create the GitHub repo** `azure-client-baseline` and push this code to it *after* step 3.
 2. **Bootstrap once, locally** (creates remote-state storage and the GitHub OIDC identity):
    ```bash
    az login
@@ -136,7 +136,7 @@ constraints that code review cannot catch.
 pinned to zones 1, 2 and 3. All three returned `SkuNotAvailable` (capacity
 restrictions for Standard_B1s in uksouth), so the shortage covers the whole region,
 not a single zone. The VM stays disabled behind the `enable_compute` flag, and the
-rest of the landing zone is deployed.
+rest of the environment baseline is deployed.
 
 ## Security scanning
 
@@ -171,7 +171,7 @@ Accepted findings are suppressed inline (`#checkov:skip=ID:reason`) or in
 
 ## Architecture
 
-![Architecture of the MSP landing zone](docs/images/architecture.png)
+![Architecture of the Secure Client Environment Baseline](docs/images/architecture.png)
 
 *Diagram generated with GitDiagram from this repository and checked by hand. The
 Ubuntu VM is shown as optional because it is disabled (`enable_compute = false`) after

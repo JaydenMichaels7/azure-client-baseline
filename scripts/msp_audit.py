@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit one Azure client environment against the landing-zone rules.
+"""Audit one Azure client environment against the environment-baseline rules.
 
 Checks
   tags     every resource carries the required tags
