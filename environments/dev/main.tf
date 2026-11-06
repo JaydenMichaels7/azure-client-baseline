@@ -23,7 +23,7 @@ locals {
   tags = {
     client      = var.client_name
     environment = var.environment
-    project     = "msp-landing-zone"
+    project     = "client-environment-baseline"
     managed_by  = "terraform"
     owner       = "jayden"
   }

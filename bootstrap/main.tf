@@ -22,7 +22,7 @@ variable "github_repo_id" { type = string }
 
 variable "github_repo" {
   type    = string
-  default = "azure-msp-landing-zone"
+  default = "azure-client-baseline"
 }
 
 variable "location" {
@@ -39,7 +39,7 @@ resource "random_string" "suffix" {
 }
 
 locals {
-  tags = { project = "msp-landing-zone", purpose = "terraform-state", managed = "terraform" }
+  tags = { project = "secure-environment-baseline", purpose = "terraform-state", managed = "terraform" }
 }
 
 # ---- Remote state ----
