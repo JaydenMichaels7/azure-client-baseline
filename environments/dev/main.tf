@@ -23,7 +23,7 @@ locals {
   tags = {
     client      = var.client_name
     environment = var.environment
-    project     = "client-environment-baseline"
+    project     = "secure-environment-baseline"
     managed_by  = "terraform"
     owner       = "jayden"
   }
